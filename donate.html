@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate | Safe Water Myanmar</title>
+  <meta name="description" content="Donate to Safe Water for Every Child Myanmar. Every dollar brings safe drinking water to Karen communities in eastern Myanmar." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav id="navbar" class="scrolled">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-bubble">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 7.1 4 10.82 4 13.8 4 18.64 7.58 22 12 22s8-3.36 8-8.2C20 10.82 17.52 7.1 12 2z"/></svg>
+    </div>
+    <div class="nav-logo-words">
+      <strong>Safe Water Myanmar</strong>
+      <span>For Every Child</span>
+    </div>
+  </a>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#karen">The Karen People</a></li>
+    <li><a href="index.html#programs">Our Work</a></li>
+    <li><a href="index.html#founder">Our Founder</a></li>
+    <li><a href="donate.html" class="btn-nav-donate">Donate Now</a></li>
+  </ul>
+</nav>
+
+<!-- ════════════ DONATE HERO ════════════ -->
+<div class="donate-hero">
+  <div class="hero-orb hero-orb-1" style="opacity:.15"></div>
+  <div class="hero-orb hero-orb-2" style="opacity:.1"></div>
+  <span class="section-label" style="color:#7dd3fc">Make a Difference</span>
+  <h1>Give the Gift of<br /><em style="color:#7dd3fc;font-style:normal">Clean Water</em></h1>
+  <p>
+    One filter. 700 people. Ten years of safe water. Less than $1 per person per year.
+    Your generosity reaches some of the most remote and vulnerable communities on earth.
+  </p>
+</div>
+
+<!-- ════════════ DONATE BODY ════════════ -->
+<div class="donate-body">
+  <div class="container">
+    <div class="donate-layout">
+
+      <!-- ── FORM ── -->
+      <div>
+        <div class="donate-form-box">
+
+          <!-- Frequency -->
+          <div class="form-section">
+            <div class="freq-toggle">
+              <button class="freq-btn active" id="btnOnce"   onclick="setFreq('once')">Give Once</button>
+              <button class="freq-btn"         id="btnMonthly" onclick="setFreq('monthly')">Give Monthly</button>
+            </div>
+
+            <p id="freqNote" style="font-size:.82rem;color:var(--text-light);margin-bottom:1.2rem;text-align:center;">
+              A one-time gift delivers immediate impact for communities in need.
+            </p>
+          </div>
+
+          <!-- Amount -->
+          <div class="form-section">
+            <div class="form-section-title">Choose an amount (AUD)</div>
+            <div class="amount-grid">
+              <button class="amount-btn" onclick="selectAmount(this, 30)">
+                <span class="amount-val">$30</span>
+                <span class="amount-hint">Water testing for 5 families</span>
+              </button>
+              <button class="amount-btn" onclick="selectAmount(this, 60)">
+                <span class="amount-val">$60</span>
+                <span class="amount-hint">Portable filter for a family</span>
+              </button>
+              <button class="amount-btn selected" onclick="selectAmount(this, 120)">
+                <span class="amount-val">$120</span>
+                <span class="amount-hint">Safe water for a child for a year</span>
+              </button>
+              <button class="amount-btn" onclick="selectAmount(this, 250)">
+                <span class="amount-val">$250</span>
+                <span class="amount-hint">Filters &amp; education for a village</span>
+              </button>
+              <button class="amount-btn" onclick="selectAmount(this, 500)">
+                <span class="amount-val">$500</span>
+                <span class="amount-hint">Full water assessment, 25 families</span>
+              </button>
+              <button class="amount-btn" onclick="selectAmount(this, 6000)">
+                <span class="amount-val">$6,000</span>
+                <span class="amount-hint">Complete filter for 700 people, 10 yrs</span>
+              </button>
+            </div>
+
+            <div class="custom-amount">
+              <label for="customAmt">Or enter a custom amount</label>
+              <div class="input-prefix">
+                <span>AUD $</span>
+                <input type="number" id="customAmt" placeholder="e.g. 75" min="5"
+                  oninput="handleCustom(this.value)" />
+              </div>
+            </div>
+
+            <div id="donationImpact" style="
+              margin-top:1.2rem; padding:1rem 1.2rem;
+              background:var(--off-white); border-radius:var(--radius);
+              font-size:.88rem; color:var(--text-mid); border-left:3px solid var(--accent);
+            ">
+              💧 <strong>Your $120</strong> will provide safe water for a child for an entire year.
+            </div>
+          </div>
+
+          <!-- DAA Partnership notice -->
+          <div style="
+            margin-top:1.5rem; padding:1.2rem 1.5rem;
+            background:#f0f9ff; border-radius:var(--radius);
+            border:1px solid #bae6fd; display:flex; gap:1rem; align-items:flex-start;
+          ">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:22px;height:22px;color:#0369a1;flex-shrink:0;margin-top:.1rem">
+              <path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+            <div style="font-size:.875rem;color:#0c4a6e;line-height:1.6;">
+              <strong>Processed securely by Disaster Aid Australia</strong><br />
+              Clicking the button below will take you to our trusted partner's secure
+              payment page. Disaster Aid Australia handles all donations on our behalf,
+              issues official tax receipts, and ensures every dollar reaches programs on the ground.
+              Your card details are entered only on their site &mdash; never here.
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <button class="submit-btn" id="submitBtn" onclick="handleDonate()" style="margin-top:1.5rem;">
+            Continue to Donate &mdash; $120 →
+          </button>
+
+          <div class="secure-note">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            Secure payment via Disaster Aid Australia &middot; Tax-deductible receipt issued automatically
+          </div>
+
+        </div>
+
+        <!-- Tax deduction note -->
+        <div style="margin-top:1.5rem;padding:1.2rem 1.5rem;background:#fff;border-radius:var(--radius);border:1px solid var(--border);font-size:.85rem;color:var(--text-mid);">
+          <strong style="color:var(--primary);">Tax Deductible (Australian donors):</strong>
+          Disaster Aid Australia (ABN 55 129 338 825) is a registered DGR charity.
+          Donations of $2 or more are fully tax-deductible. An official receipt will be
+          emailed to you by Disaster Aid Australia immediately after your donation is processed.
+        </div>
+      </div>
+
+      <!-- ── SIDEBAR ── -->
+      <div class="impact-sidebar">
+
+        <div class="impact-sidebar-card">
+          <h3>Your Donation Provides</h3>
+          <div class="impact-item-row">
+            <span class="impact-amount">$30</span>
+            <span class="impact-what">Water testing supplies for 5 families, identifying contamination and treatment needs</span>
+          </div>
+          <div class="impact-item-row">
+            <span class="impact-amount">$60</span>
+            <span class="impact-what">A portable ROAMfilter for a family, providing safe drinking water for months</span>
+          </div>
+          <div class="impact-item-row">
+            <span class="impact-amount">$120</span>
+            <span class="impact-what">Safe water, hygiene supplies, and education for a school child for a full year</span>
+          </div>
+          <div class="impact-item-row">
+            <span class="impact-amount">$250</span>
+            <span class="impact-what">Water filters, soap, and WASH education materials for an entire small village</span>
+          </div>
+          <div class="impact-item-row">
+            <span class="impact-amount">$500</span>
+            <span class="impact-what">A complete water quality assessment covering 25 families, with long-term monitoring</span>
+          </div>
+          <div class="impact-item-row">
+            <span class="impact-amount">$6,000</span>
+            <span class="impact-what">A full filter system installation providing safe water for 700 people for up to 10 years</span>
+          </div>
+        </div>
+
+        <div class="impact-sidebar-card">
+          <h3>Why Trust Us</h3>
+          <div class="trust-items">
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+              </div>
+              <div class="trust-text">
+                <strong>100% to Programs</strong>
+                <span>Every dollar goes directly to water programs, not admin</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg>
+              </div>
+              <div class="trust-text">
+                <strong>Verified Impact</strong>
+                <span>Partnered with Disaster Aid Australia and WaterOAM</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+              </div>
+              <div class="trust-text">
+                <strong>Local Leadership</strong>
+                <span>Run by trained Karen staff embedded in communities</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </div>
+              <div class="trust-text">
+                <strong>Receipt Emailed</strong>
+                <span>Instant confirmation with tax receipt for your records</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="impact-sidebar-card" style="background:linear-gradient(135deg,#0c4a6e,#0891b2);color:#fff;">
+          <h3 style="color:#fff">65,000+</h3>
+          <p style="color:rgba(255,255,255,.75);font-size:.88rem;margin-top:.5rem;">
+            People have already been given safe drinking water in villages, schools and camps
+            across Karen State, Myanmar. Join the growing community of supporters making this possible.
+          </p>
+          <a href="index.html#programs" style="display:inline-block;margin-top:1.2rem;color:#7dd3fc;font-size:.85rem;font-weight:600;text-decoration:none;">
+            See our programs →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ FOOTER ══════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="text-decoration:none">
+          <div class="nav-logo-bubble">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 7.1 4 10.82 4 13.8 4 18.64 7.58 22 12 22s8-3.36 8-8.2C20 10.82 17.52 7.1 12 2z"/></svg>
+          </div>
+          <div class="nav-logo-words">
+            <strong>Safe Water Myanmar</strong>
+            <span>For Every Child</span>
+          </div>
+        </a>
+        <p>A small, effective, and agile NGO bringing safe drinking water to Karen communities in the inaccessible mountains of eastern Myanmar.</p>
+        <div class="social-row">
+          <a href="https://www.facebook.com/safewatermyanmar/" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/safewatermyanmar/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Organisation</h5>
+        <ul>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#founder">Our Founder</a></li>
+          <li><a href="index.html#programs">Our Programs</a></li>
+          <li><a href="index.html#karen">The Karen People</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Get Involved</h5>
+        <ul>
+          <li><a href="donate.html">Donate Now</a></li>
+          <li><a href="donate.html">Monthly Giving</a></li>
+          <li><a href="#">Volunteer</a></li>
+          <li><a href="#">Share Our Story</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:info@safewatermyanmar.org">info@safewatermyanmar.org</a></li>
+          <li><a href="https://www.facebook.com/safewatermyanmar/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.instagram.com/safewatermyanmar/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 Safe Water for Every Child &ndash; Myanmar. All rights reserved.</span>
+      <span>Partnered with Disaster Aid Australia &middot; ABN 55 129 338 825</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* Nav */
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+    if (!nav.classList.contains('scrolled')) nav.classList.add('scrolled');
+  });
+  const toggle = document.getElementById('navToggle');
+  const links  = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+    document.body.style.overflow = links.classList.contains('open') ? 'hidden' : '';
+  });
+
+  /* Frequency */
+  function setFreq(type) {
+    document.getElementById('btnOnce').classList.toggle('active',    type === 'once');
+    document.getElementById('btnMonthly').classList.toggle('active', type === 'monthly');
+    document.getElementById('freqNote').textContent = type === 'once'
+      ? 'A one-time gift delivers immediate impact for communities in need.'
+      : 'A monthly gift provides sustained, year-round support — you can set up a recurring donation on the Disaster Aid Australia payment page.';
+    updateSubmitBtn();
+  }
+
+  /* Amount selection */
+  let selectedAmount = 120;
+
+  const impactMessages = {
+    30:   '💧 Your $30 will fund water testing for 5 families, identifying what\'s safe and what isn\'t.',
+    60:   '💧 Your $60 provides a portable filter — clean water for a whole family for months.',
+    120:  '💧 Your $120 will provide safe water for a child for an entire year.',
+    250:  '💧 Your $250 brings water filters, soap, and WASH education to an entire small village.',
+    500:  '💧 Your $500 funds a full water quality assessment for 25 families with long-term monitoring.',
+    6000: '💧 Your $6,000 installs a complete filter system — safe water for 700 people for up to 10 years.',
+  };
+
+  function selectAmount(btn, amount) {
+    document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    selectedAmount = amount;
+    document.getElementById('customAmt').value = '';
+    updateImpact(amount);
+    updateSubmitBtn();
+  }
+
+  function handleCustom(val) {
+    const amount = parseFloat(val);
+    if (amount > 0) {
+      document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
+      selectedAmount = amount;
+      updateImpact(amount);
+      updateSubmitBtn();
+    }
+  }
+
+  function updateImpact(amount) {
+    const el = document.getElementById('donationImpact');
+    if (impactMessages[amount]) {
+      el.innerHTML = impactMessages[amount].replace('Your $', `<strong>Your $`) + '</strong>';
+    } else {
+      const approxPeople = Math.round(amount / 0.86);
+      el.innerHTML = `💧 <strong>Your $${amount.toLocaleString()}</strong> could provide approximately ${approxPeople} person-years of safe water access.`;
+    }
+  }
+
+  const DAA_GENERAL  = 'https://disasteraidaustralia.org.au/donate/';
+  const DAA_PROJECT  = 'https://drct-daa.prod.supporterhub.net/donations/projectdonationpage';
+
+  function updateSubmitBtn() {
+    const amt = selectedAmount;
+    const fmtAmt = amt >= 1000 ? '$' + (amt / 1000).toFixed(amt % 1000 === 0 ? 0 : 1) + 'k' : '$' + amt;
+    document.getElementById('submitBtn').textContent = `Continue to Donate — ${fmtAmt} →`;
+  }
+
+  function handleDonate() {
+    /* $6,000 goes to the project-specific filter sponsorship page; all others to general DAA donations */
+    const url = selectedAmount === 6000 ? DAA_PROJECT : DAA_GENERAL;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
+
+  /* Read URL param */
+  const params = new URLSearchParams(window.location.search);
+  const presetAmt = parseInt(params.get('amount'), 10);
+  if (presetAmt) {
+    const matchingBtn = Array.from(document.querySelectorAll('.amount-btn'))
+      .find(b => b.querySelector('.amount-val')?.textContent?.replace(/[$,]/g,'') == presetAmt);
+    if (matchingBtn) {
+      matchingBtn.click();
+    } else {
+      selectedAmount = presetAmt;
+      document.getElementById('customAmt').value = presetAmt;
+      updateImpact(presetAmt);
+      updateSubmitBtn();
+    }
+  }
+</script>
+</body>
+</html>
